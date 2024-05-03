@@ -1,0 +1,16 @@
+nav{
+    display: none;
+    position: fixed;
+    margin: 3vh 50px;
+    padding-bottom: 40px;
+    padding-top: 10px;
+    border-radius: 10px;
+    background-color: black;
+}
+nav iframe{
+    border: 0;
+}
+nav img{
+    margin: 0 10px;
+    width: 30px;
+}
