@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="demo">
+    <script>
+        // تعريف دالة لتحميل محتوى PHP وعرضه في عنصر HTML
+        function loadPHPContent() {
+        // إنشاء كائن XMLHttpRequest
+        var xhttp = new XMLHttpRequest();
+        
+        // تحديد الدالة التي ستتم استدعاؤها عند تغير حالة الطلب
+        xhttp.onreadystatechange = function() {
+            // التحقق إذا كان الطلب قد اكتمل وأن الحالة هي "OK"
+            if (this.readyState == 4 && this.status == 200) {
+            // عرض البيانات المستجابة داخل عنصر HTML بمعرف "demo"
+            document.getElementById("demo").innerHTML = this.responseText;
+            }
+        };
+        
+        // تحديد نوع الطلب كـ "GET" والملف المطلوب "yourfile.php"
+        xhttp.open("GET", "home.php", true);
+        
+        // إرسال الطلب
+        xhttp.send();
+        }
+
+        // استدعاء الدالة عند تحميل الصفحة
+        window.onload = loadPHPContent;
+
+    </script>
+</body>
+</html>
